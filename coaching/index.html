@@ -1,6 +1,10 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Fern Impson</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#23201F">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -193,6 +197,7 @@ h3{font-size:var(--fs-h3);line-height:1.25;margin-bottom:var(--gap-sub)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 
 .portrait img{aspect-ratio:1/1;border-radius:50%;max-width:24rem;margin:0 auto;object-position:50% 40%}
+.hero__copy{margin-top:52px}.problem .group{display:flex;flex-direction:column;gap:8px}.problem .group>*{margin:0}.problem .group>p,.problem .thoughts>li{line-height:1.45}.problem .thoughts{display:flex;flex-direction:column;gap:8px;padding:0;list-style:none}.problem .thoughts>li{margin:0}.problem .group-h{margin-bottom:6px;line-height:1.2}.problem .group+.group{margin-top:28px}.problem .guess{margin-bottom:20px}.method .intro{display:flex;flex-direction:column;gap:8px}.method .intro>*,.method .intro .tight>*{margin:0}.method .intro .tight{display:flex;flex-direction:column;gap:8px;margin:0}.method .intro p{line-height:1.45}.method .h2{margin-bottom:20px}.method .pillars{gap:28px;margin:28px 0 0}.method .pillar p{line-height:1.45}.method .mhb{margin-top:28px;display:flex;flex-direction:column;gap:8px}.method .mhb p{margin:0;line-height:1.25}.work .inner{display:flex;flex-direction:column;gap:8px}.work .inner>*,.work .list>*,.work .col>*{margin:0}.work .list,.work .col{display:flex;flex-direction:column;gap:8px;margin:0}.work .inner p{line-height:1.45}.work .h2{margin-bottom:12px}.method .pillars{margin-top:28px}.method .pillar h3{text-transform:uppercase;font-family:var(--serif);font-weight:400;font-size:var(--fs-h3);line-height:1.25;color:var(--ivory);margin:0 0 8px}.problem .guess,.method .h2,.testimonials .h2,.offer .h2,.story .h2,.final .h2{margin-bottom:32px}.work .h2{margin-bottom:24px}.on-cream h2,.on-cream .group-h,.on-cream h3{color:#6E1228!important}.btn--burgundy{background:#6E1228!important;border-color:#6E1228!important}.hero__copy .hero__list{font-size:var(--fs-body);line-height:1.6;margin:32px 0 0}.hero__sub em{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.3em;line-height:1;color:var(--ivory);letter-spacing:.005em}.hero__copy .hero__sub{font-family:var(--sans);font-weight:400;font-size:var(--fs-body);line-height:1.6;margin:0}
 /* tighter section spacing */
 .section,.work,.final{padding-top:clamp(2.25rem,5vw,4rem);padding-bottom:clamp(2.25rem,5vw,4rem)}
 .lede{padding-top:clamp(3rem,5vw,3.5rem);padding-bottom:clamp(3rem,5vw,3.5rem)}
@@ -234,22 +239,21 @@ blockquote{margin:0}
 .offer-close .cta-row{margin-top:0}
 .final .cta-row{margin-top:var(--gap-group)}
 
-/* Booking popup: keeps visitors on the coaching page and preserves existing CTA styling. */
-.booking-dialog{border:0;padding:0;width:min(720px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 24px);height:min(760px,calc(100dvh - 24px));border-radius:8px;background:var(--cream);color:var(--charcoal);box-shadow:0 20px 80px rgba(0,0,0,.35);overflow:hidden}
-.booking-dialog::backdrop{background:rgba(22,17,18,.78)}
-.booking-dialog__inner{display:flex;flex-direction:column;height:100%}
-.booking-dialog__top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-shrink:0;padding:12px 18px;background:var(--charcoal);color:var(--ivory)}
-.booking-dialog__title{font-family:var(--serif);font-weight:400;font-size:1.25rem;line-height:1.2;margin:0}
-.booking-dialog__close{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border:1px solid rgba(248,244,239,.45);border-radius:3px;background:transparent;color:var(--ivory);font-size:1.75rem;line-height:1;cursor:pointer}
-.booking-dialog__close:hover,.booking-dialog__close:focus-visible{background:rgba(248,244,239,.13)}
-.booking-dialog__frame{width:100%;flex:1;min-height:0;border:0;background:white}
-.booking-dialog__fallback{flex-shrink:0;margin:0;padding:10px 18px 14px;text-align:center;font-size:.8125rem;line-height:1.4;background:var(--cream)}
-.booking-dialog__fallback a{color:var(--burgundy);text-underline-offset:3px}
-@media(max-width:600px){.booking-dialog{width:100vw;max-height:100dvh;height:100dvh;border-radius:0}.booking-dialog__top{padding:8px 12px}}
+/* Popup for the existing booking buttons; intentionally separate from landing-page typography. */
+#fern-booking-dialog{box-sizing:border-box;width:min(720px,calc(100vw - 20px));height:min(850px,calc(100dvh - 20px));max-height:calc(100dvh - 20px);max-width:720px;margin:auto;padding:0;border:0;border-radius:6px;background:var(--cream);color:var(--charcoal);box-shadow:0 22px 80px rgba(0,0,0,.5);overflow:hidden}
+#fern-booking-dialog::backdrop{background:rgba(13,11,11,.78)}
+.fern-booking-frame{display:flex;flex-direction:column;width:100%;height:100%}
+.fern-booking-bar{flex:0 0 auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 15px;background:var(--charcoal);color:var(--ivory);font-family:var(--sans);font-size:14px;letter-spacing:.03em}
+.fern-booking-close{min-width:44px;min-height:44px;border:1px solid rgba(248,244,239,.45);border-radius:3px;background:transparent;color:var(--ivory);font:inherit;font-size:23px;cursor:pointer;line-height:1}
+.fern-booking-close:focus-visible{outline:2px solid var(--taupe);outline-offset:2px}
+.fern-booking-iframe{display:block;flex:1 1 auto;min-height:0;width:100%;border:0;background:#fff}
+body.fern-booking-open{overflow:hidden}
 </style>
+</head>
+<body>
 <!-- SOCIAL LINKS: paste your full links between the quotes (email as mailto:you@example.com). Icons with an empty link do nothing. -->
-<script>window.FERN_SOCIAL = {email:"mailto:fern@fernimpson.com",instagram:"https://www.instagram.com/fernimpson/",tiktok:"https://www.tiktok.com/@fernimpson",youtube:"https://www.youtube.com/@fernimpson"};</script>
-<!-- Booking buttons open the embedded Google Calendar appointment schedule in an accessible popup. -->
+<script>window.FERN_SOCIAL = {"email":"mailto:fern@fernimpson.com","instagram":"https://www.instagram.com/fernimpson/","tiktok":"https://www.tiktok.com/@fernimpson","youtube":"https://www.youtube.com/@fernimpson"};</script>
+<!-- BOOKING LINK: paste your booking URL between the quotes. It is applied to the nav button and every booking button. -->
 <script>window.FERN_BOOKING_URL = "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1150Jbq2oNVbxtQ7gZvg8j9wJ2MnauX3LXagP9tHUdgBB8MjT-ckTavo19GfQhQ0sIkynYo2iq?gv=true";</script>
 <nav class="nav" aria-label="Primary">
   <a class="nav__brand" href="#top">Fern Impson</a>
@@ -268,8 +272,9 @@ blockquote{margin:0}
       <span class="t-big">2 MONTHS</span>
     </h1>
     <div class="hero__copy">
-      <p>Apply for that job. Ask for the promotion. Start the business. Start dating again. Improve your relationships. Set the boundary. Move countries. Post consistently on social media. Make the decision.</p>
-      <div class="cta-row"><a class="btn btn--ivory" data-cta href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1150Jbq2oNVbxtQ7gZvg8j9wJ2MnauX3LXagP9tHUdgBB8MjT-ckTavo19GfQhQ0sIkynYo2iq?gv=true">BOOK MY FREE 20-MINUTE CALL</a><p class="cta-note">Free 20-minute introductory coaching call</p></div>
+      <p class="hero__sub"><em>Private 1:1 coaching</em> is a powerful space where I help you build real confidence, stop overthinking and start turning your dreams into reality.</p>
+      <div class="cta-row"><a class="btn btn--ivory" data-cta href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1150Jbq2oNVbxtQ7gZvg8j9wJ2MnauX3LXagP9tHUdgBB8MjT-ckTavo19GfQhQ0sIkynYo2iq?gv=true">BOOK MY FREE 20-MINUTE CALL</a></div>
+      <p class="hero__list">Apply for that job. Ask for the promotion. Start the business. Start dating again. Improve your relationships. Set the boundary. Move countries. Post consistently on social media.</p>
     </div>
   </div>
 </header>
@@ -306,23 +311,6 @@ blockquote{margin:0}
         <p>There might be trauma stored in your body, and your nervous system goes into fight-or-flight mode, making even simple actions feel much harder than they should.</p>
         <p>That is why telling yourself to “just be more confident” does not work.</p>
       </div>
-
-      <p class="emph">You need to understand what is happening in your mind, heart and body so you can respond differently and start trusting yourself enough to take the next step.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section work on-charcoal">
-  <div class="wrap">
-    <div class="inner">
-      <h2 class="h2">You’ve done the work. So why are you <em>still stuck?</em></h2>
-      <div class="list tight"><p>You’ve read the books.</p><p>Done the courses.</p><p>Saved the podcasts.</p><p>Watched the videos.</p><p>Asked Google, ChatGPT and everyone else what you should do next.</p></div>
-      <div class="col">
-        <p>But when it’s time to apply what you know, you still overthink, avoid the conversation or talk yourself out of taking action.</p>
-        <p class="big">Because you don’t need more information.</p>
-        <p>You need TRANSFORMATION. And I’ll support you in understanding what is keeping you stuck and following through on the actions that will move you forward.</p>
-        <p>I’ll be in your corner, challenge you when you need it and help you follow through on the things you keep saying you want to do.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -335,11 +323,6 @@ blockquote{margin:0}
       <p>Yeah… if it were that easy, you’d have done it already.</p>
       <p>Real confidence is more than pretending you’ve got it all together. It affects your thoughts, emotions and body, which is why we work with all three.</p>
       <p>Confidence isn’t just a mindset. That’s why I created my <strong>Mind, Heart &amp; Body (MHB) Method.</strong></p>
-    </div>
-    <div class="mhb">
-      <p>Your <span>MIND</span> may overthink.</p>
-      <p>Your <span>HEART</span> may fear rejection.</p>
-      <p>Your <span>BODY</span> may feel unsafe.</p>
     </div>
     <div class="pillars">
       <div class="pillar"><h3>Mind</h3><p>Understand the voices in your head, stop overthinking and stop believing every thought that tells you you’re not good enough.</p></div>
@@ -374,7 +357,22 @@ blockquote{margin:0}
       <p class="invest-label">YOUR INVESTMENT</p>
       <p class="invest">A$3,000</p>
       <p class="pay">Payment plans available</p>
-      <div class="cta-row"><a class="btn btn--burgundy" data-cta href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1150Jbq2oNVbxtQ7gZvg8j9wJ2MnauX3LXagP9tHUdgBB8MjT-ckTavo19GfQhQ0sIkynYo2iq?gv=true">BOOK MY FREE 20-MINUTE CALL</a><p class="cta-note">Free 20-minute introductory coaching call</p></div>
+      <div class="cta-row"><a class="btn btn--burgundy" data-cta href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1150Jbq2oNVbxtQ7gZvg8j9wJ2MnauX3LXagP9tHUdgBB8MjT-ckTavo19GfQhQ0sIkynYo2iq?gv=true">BOOK MY FREE 20-MINUTE CALL</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section work on-charcoal">
+  <div class="wrap">
+    <div class="inner">
+      <h2 class="h2">You’ve done the work. So why are you <em>still stuck?</em></h2>
+      <div class="list tight"><p>You’ve read the books.</p><p>Done the courses.</p><p>Saved the podcasts.</p><p>Watched the videos.</p><p>Asked Google, ChatGPT and everyone else what you should do next.</p></div>
+      <div class="col">
+        <p>But when it’s time to apply what you know, you still overthink, avoid the conversation or talk yourself out of taking action.</p>
+        <p class="big">Because you don’t need more information.</p>
+        <p>You need TRANSFORMATION. And I’ll support you in understanding what is keeping you stuck and following through on the actions that will move you forward.</p>
+        <p>I’ll be in your corner, challenge you when you need it and help you follow through on the things you keep saying you want to do.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -446,52 +444,66 @@ blockquote{margin:0}
       <p class="soft">Let’s talk about your next move.</p>
       <p>In our free 20-minute Confidence Chat, we’ll explore what you’ve been putting off, what’s holding you back and whether my 8-week coaching is right for you.</p>
     </div>
-    <div class="cta-row"><a class="btn btn--ivory-on-burgundy" data-cta href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1150Jbq2oNVbxtQ7gZvg8j9wJ2MnauX3LXagP9tHUdgBB8MjT-ckTavo19GfQhQ0sIkynYo2iq?gv=true">BOOK MY FREE 20-MINUTE CALL</a><p class="cta-note">Free 20-minute introductory coaching call</p></div>
+    <div class="cta-row"><a class="btn btn--ivory-on-burgundy" data-cta href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1150Jbq2oNVbxtQ7gZvg8j9wJ2MnauX3LXagP9tHUdgBB8MjT-ckTavo19GfQhQ0sIkynYo2iq?gv=true">BOOK MY FREE 20-MINUTE CALL</a></div>
   </div>
 </section>
 
 </main>
 <footer class="foot"><nav class="social" aria-label="Social media"><a href="mailto:fern@fernimpson.com" data-social="email" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7.5l8.5 6 8.5-6"/></svg></a><a href="https://www.instagram.com/fernimpson/" data-social="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg></a><a href="https://www.tiktok.com/@fernimpson" data-social="tiktok" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" d="M16.6 3c.3 2.4 1.7 4 4.1 4.2v3.2c-1.5 0-2.9-.5-4.1-1.3v6.1a5.8 5.8 0 1 1-5.8-5.8c.3 0 .6 0 .9.1v3.3a2.6 2.6 0 1 0 1.7 2.4V3h3.2z"/></svg></a><a href="https://www.youtube.com/@fernimpson" data-social="youtube" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path fill="currentColor" stroke="none" d="M10.2 9.3v5.4l4.6-2.7z"/></svg></a></nav><p class="foot-name">FERN IMPSON</p></footer>
-
-<!-- Appointment booking is provided by Google Calendar; the iframe is loaded only after a visitor clicks a CTA. -->
-<dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-dialog-title">
-  <div class="booking-dialog__inner">
-    <div class="booking-dialog__top">
-      <h2 class="booking-dialog__title" id="booking-dialog-title">Book your free 20-minute call</h2>
-      <button class="booking-dialog__close" type="button" aria-label="Close booking calendar" id="booking-dialog-close">&times;</button>
-    </div>
-    <iframe class="booking-dialog__frame" id="booking-dialog-frame" title="Choose a time with Fern on Google Calendar" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-    <p class="booking-dialog__fallback">Having trouble viewing the calendar? <a id="booking-dialog-direct" href="#" target="_blank" rel="noopener noreferrer">Open the booking page in a new tab</a>.</p>
-  </div>
-</dialog>
 <script>
 (function(){
-  var url = (window.FERN_BOOKING_URL || "").trim();
-  var dialog = document.getElementById('booking-dialog');
-  var frame = document.getElementById('booking-dialog-frame');
-  var closeButton = document.getElementById('booking-dialog-close');
-  var directLink = document.getElementById('booking-dialog-direct');
-  directLink.href = url;
+  var url=(window.FERN_BOOKING_URL||"").trim();
   document.querySelectorAll('[data-cta]').forEach(function(a){
-    a.href = url;
-    a.addEventListener('click', function(e){
-      // Modified clicks retain the normal option to open Google's booking page in a new tab.
-      if(e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0 || !dialog.showModal){return;}
-      e.preventDefault();
-      frame.src = url;
-      dialog.showModal();
-      closeButton.focus();
-    });
+    if(url){a.setAttribute('href',url);}
+    else{a.addEventListener('click',function(e){e.preventDefault();});}
   });
-  closeButton.addEventListener('click', function(){dialog.close();});
-  dialog.addEventListener('click', function(e){if(e.target === dialog){dialog.close();}});
-  dialog.addEventListener('close', function(){frame.removeAttribute('src');});
-  var soc = window.FERN_SOCIAL || {};
+  var soc=window.FERN_SOCIAL||{};
   document.querySelectorAll('[data-social]').forEach(function(a){
-    var u = (soc[a.getAttribute('data-social')] || '').trim();
+    var u=(soc[a.getAttribute('data-social')]||'').trim();
     if(u){a.setAttribute('href',u); if(u.indexOf('http')===0){a.setAttribute('target','_blank');a.setAttribute('rel','noopener');}}
     else{a.addEventListener('click',function(e){e.preventDefault();});}
   });
 })();
 </script>
-</body></html>
+
+<!-- Google Calendar booking page shown in a modal by every existing booking CTA. -->
+<dialog id="fern-booking-dialog" aria-label="Book a free 20-minute call with Fern">
+  <div class="fern-booking-frame">
+    <div class="fern-booking-bar">
+      <span>Book your free 20-minute call</span>
+      <button class="fern-booking-close" type="button" aria-label="Close booking calendar">&times;</button>
+    </div>
+    <iframe class="fern-booking-iframe" title="Google Calendar: book a call with Fern" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</dialog>
+<script>
+(function () {
+  var dialog = document.getElementById('fern-booking-dialog');
+  var frame = dialog.querySelector('iframe');
+  var closer = dialog.querySelector('.fern-booking-close');
+  var bookingUrl = window.FERN_BOOKING_URL;
+  var lastTrigger = null;
+  document.querySelectorAll('[data-cta]').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      // Normal navigation remains available if a browser doesn't support modal dialogs.
+      if (typeof dialog.showModal !== 'function' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      lastTrigger = link;
+      if (!frame.hasAttribute('src')) frame.setAttribute('src', bookingUrl);
+      dialog.showModal();
+      document.body.classList.add('fern-booking-open');
+      closer.focus();
+    });
+  });
+  closer.addEventListener('click', function () { dialog.close(); });
+  dialog.addEventListener('click', function (event) {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener('close', function () {
+    document.body.classList.remove('fern-booking-open');
+    if (lastTrigger) lastTrigger.focus();
+  });
+})();
+</script>
+</body>
+</html>
