@@ -217,7 +217,7 @@ function show(m){err.textContent=m;err.hidden=false;}
 function save(fd){
   if(window.FERN_SKIP_SAVE){return Promise.resolve();}
   var ctl=window.AbortController?new AbortController():null,t=setTimeout(function(){if(ctl)ctl.abort();},15000);
-  return fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(fd).toString(),signal:ctl?ctl.signal:undefined}).then(function(r){clearTimeout(t);if(!r.ok)throw new Error('save failed');}).catch(function(e){clearTimeout(t);throw e;});
+  return fetch('/__forms.html',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(fd).toString(),signal:ctl?ctl.signal:undefined}).then(function(r){clearTimeout(t);if(!r.ok)throw new Error('save failed');}).catch(function(e){clearTimeout(t);throw e;});
 }
 form.addEventListener('submit',function(e){
   e.preventDefault();err.hidden=true;

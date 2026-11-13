@@ -221,7 +221,7 @@ function gShow(m){gerr.textContent=m;gerr.hidden=false;}
 function saveLead(fd){
   if(window.FERN_SKIP_SAVE){return Promise.resolve();}
   var ctl=('AbortController' in window)?new AbortController():null,t=setTimeout(function(){if(ctl)ctl.abort();},15000);
-  return fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(fd).toString(),signal:ctl?ctl.signal:undefined})
+  return fetch('/__forms.html',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(fd).toString(),signal:ctl?ctl.signal:undefined})
     .then(function(r){clearTimeout(t);if(!r.ok){throw new Error('save failed');}},function(e){clearTimeout(t);throw e;});
 }
 gform.addEventListener('submit',function(e){
