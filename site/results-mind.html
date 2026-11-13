@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quiz Results - Mind</title>
+<meta name="theme-color" content="#23201F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: same bands as the main page. Charcoal hero, burgundy, cream, burgundy, cream, charcoal video + call, burgundy close, charcoal footer. One centred column. */
+:root{
+  --burgundy:#440915;--title:#6E1228;--charcoal:#23201F;--cream:#F7F3EE;--taupe:#B39A8B;--ivory:#F8F4EF;
+  --serif:"DM Serif Display","Bodoni Moda",Didot,Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --fs-hero:clamp(2.25rem,1.7rem + 3.6vw,4rem);
+  --fs-h2:clamp(1.875rem,1.5rem + 1.3vw,2.75rem);--fs-h3:clamp(1.3125rem,1.15rem + .5vw,1.625rem);
+  --fs-body:clamp(1.0625rem,1rem + .2vw,1.1875rem);--fs-label:.8125rem;
+  --gap-line:8px;--gap-phrase:16px;--gap-group:32px;
+  --gutter:clamp(1.5rem,6vw,5rem);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;padding-top:calc(64px + env(safe-area-inset-top,0px));background:var(--charcoal);color:var(--ivory);font-family:var(--sans);font-size:var(--fs-body);line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+p{margin:0}
+h1,h2,.brand{font-family:var(--serif);font-weight:400;margin:0;font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+.bar{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--charcoal);height:calc(64px + env(safe-area-inset-top,0px));padding-top:env(safe-area-inset-top,0px);display:flex;align-items:center;justify-content:center;padding-right:max(var(--gutter),env(safe-area-inset-right,0px));padding-left:max(var(--gutter),env(safe-area-inset-left,0px))}
+.brand{font-size:1.25rem;line-height:1;letter-spacing:.1em;text-transform:uppercase;color:var(--ivory)}
+.band{padding:clamp(2.5rem,6vw,4.5rem) max(var(--gutter),env(safe-area-inset-right,0px)) clamp(2.5rem,6vw,4.5rem) max(var(--gutter),env(safe-area-inset-left,0px))}
+.col{max-width:34rem;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center}
+.on-charcoal{background:var(--charcoal);color:var(--ivory)}
+.on-burgundy{background:var(--burgundy);color:var(--ivory)}
+.on-cream{background:var(--cream);color:var(--charcoal)}
+.lines{display:flex;flex-direction:column;gap:var(--gap-line)}
+.col>*+*{margin-top:var(--gap-phrase)}
+.col>.gap-l{margin-top:var(--gap-group)}
+
+/* hero */
+.hero{padding-top:clamp(1.5rem,4vw,2.5rem)}
+.portrait{display:block;width:clamp(150px,44vw,184px);aspect-ratio:1/1;height:auto;border-radius:50%;object-fit:cover}
+.label{font-family:var(--sans);font-weight:500;font-size:1.0625rem;letter-spacing:.16em;line-height:1.4;text-wrap:balance}
+h1{font-size:var(--fs-hero);line-height:1.08;letter-spacing:-.005em;color:var(--ivory);text-wrap:balance}
+.sub{max-width:28rem}
+h1{text-transform:uppercase}
+.hero .copy{max-width:30rem}
+.dk{font-family:var(--serif);font-size:1.2em;letter-spacing:.04em;color:var(--ivory)}
+.reveal h2{font-size:var(--fs-hero);line-height:1.08;letter-spacing:-.005em}
+.reveal .col>*+*{margin-top:var(--gap-phrase)}
+
+/* headings and key lines */
+h2{font-size:var(--fs-h2);line-height:1.18;text-wrap:balance}
+.on-cream h2{color:var(--title)}
+.on-burgundy h2,.on-charcoal h2{color:var(--ivory)}
+.heart{display:inline-block;width:.7em;height:.7em;margin-left:.12em;vertical-align:-.02em;fill:currentColor}
+.on-cream .heart{fill:var(--title)}
+.say{font-family:var(--serif);font-style:italic;font-weight:400;font-size:var(--fs-h3);line-height:1.3;text-wrap:balance}
+.key{font-family:var(--serif);font-weight:400;font-size:var(--fs-h3);line-height:1.3;text-wrap:balance}
+.on-cream .key,.on-cream .say{color:var(--title)}
+.lead-in{font-family:var(--serif);font-weight:400;font-size:var(--fs-h3);line-height:1.3}
+.on-cream .lead-in{color:var(--title)}
+.copy{max-width:30rem}
+.on-cream .copy{color:var(--charcoal)}
+strong{font-weight:500}
+.pc{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.3em;line-height:1;color:var(--ivory)}
+.pop{font-weight:700;color:var(--title)}
+.band.reveal{padding-top:clamp(1.25rem,3.5vw,2.25rem);padding-bottom:clamp(1.25rem,3.5vw,2.25rem)}
+.reveal .col>.sub{margin-top:16px}
+.reveal .col>.hook{margin-top:24px;font-family:var(--serif);font-weight:400;font-size:var(--fs-h3);line-height:1.3;color:var(--ivory);text-wrap:balance}
+.reveal .col>.down{width:20px;height:20px;margin-top:6px;fill:none;stroke:var(--ivory);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;opacity:.85;animation:nudge 2.4s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@media (prefers-reduced-motion:reduce){.reveal .col>.down{animation:none}}
+.mini{font-size:var(--fs-label);font-weight:500;letter-spacing:.2em;line-height:1.3;color:rgba(248,244,239,.75);margin:0}
+
+/* video + buttons */
+.video{width:100%;max-width:30rem;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;border:1px solid rgba(248,244,239,.35);border-radius:2px;color:var(--ivory)}
+.video.reel{max-width:360px;aspect-ratio:9/16;border:0;background:#000;overflow:hidden}
+.video.reel iframe{width:100%;height:100%;border:0;display:block}
+.cta.up{font-size:.9375rem;letter-spacing:.06em;line-height:1.35}
+.video svg{width:44px;height:44px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.cta{display:block;width:100%;max-width:22rem;min-height:56px;padding:16px 24px;border:1px solid var(--ivory);border-radius:999px;background:var(--ivory);color:var(--charcoal);font-family:var(--sans);font-weight:500;font-size:1.0625rem;letter-spacing:.02em;line-height:1.2;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background-color .2s,color .2s}
+.cta:hover{background:var(--cream)}
+.cta:focus-visible{outline:2px solid var(--taupe);outline-offset:3px}
+.band .cta{background:linear-gradient(180deg,#FCF9F4 0%,#EEE4D9 100%);color:#440915;border:1px solid rgba(179,154,139,.75);box-shadow:0 14px 34px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.75);font-weight:600;font-size:.875rem;letter-spacing:.12em;line-height:1.4;text-transform:uppercase;max-width:24rem;min-height:62px;padding:18px 28px;transition:transform .25s ease,box-shadow .25s ease}
+.band .cta:hover{background:linear-gradient(180deg,#FFFDF9 0%,#F3EAE0 100%);transform:translateY(-2px);box-shadow:0 18px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.85)}
+.band .cta .arr{display:inline-block;margin-left:.35em;transition:transform .25s ease}
+.band .cta:hover .arr{transform:translateX(4px)}
+@media (prefers-reduced-motion:reduce){.band .cta,.band .cta .arr{transition:none}.band .cta:hover{transform:none}}
+.note{font-size:.9375rem;line-height:1.5;opacity:.85;text-wrap:balance}
+
+.foot{background:var(--charcoal);color:var(--ivory);display:flex;flex-direction:column;align-items:center;gap:16px;padding:32px max(var(--gutter),env(safe-area-inset-right,0px)) calc(32px + env(safe-area-inset-bottom,0px)) max(var(--gutter),env(safe-area-inset-left,0px))}
+.social{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.social a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;color:var(--ivory);border-radius:50%;transition:color .3s ease,background-color .3s ease}
+.social a:hover{background:rgba(248,244,239,.12)}
+.social a:focus-visible{outline:2px solid var(--taupe);outline-offset:2px}
+.social svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.foot-name{font-family:var(--serif);font-size:1.0625rem;letter-spacing:.1em;line-height:1;margin:0}
+/* pillar results graph (inside the burgundy reveal) */
+.graph[hidden]{display:none}
+.graph{width:100%;max-width:20rem}
+.reveal .col>.graph{margin-top:28px}
+.bars{display:flex;flex-direction:column;gap:16px;text-align:left}
+.bhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:var(--gap-line);min-height:1rem}
+.bname{font-size:var(--fs-label);font-weight:500;letter-spacing:.16em;line-height:1.3;color:rgba(248,244,239,.75)}
+.btag{font-size:.75rem;font-weight:500;letter-spacing:.04em;line-height:1.3;color:var(--ivory)}
+.btrack{height:10px;border-radius:999px;background:rgba(248,244,239,.12);overflow:hidden}
+.bfill{display:block;height:100%;width:0;border-radius:999px;background:rgba(179,154,139,.6)}
+.brow.is-top .bfill{background:var(--ivory)}
+.brow.is-top .bname{color:var(--ivory)}
+.bars.go .bfill{transition:width .9s cubic-bezier(.22,.8,.3,1)}
+.bnote{margin:var(--gap-phrase) 0 0;font-size:.8125rem;line-height:1.5;color:rgba(248,244,239,.7);text-align:center}
+.bnote[hidden]{display:none}
+@media (prefers-reduced-motion:reduce){.bars.go .bfill{transition:none}}
+</style>
+</head>
+<body>
+<!-- SOCIAL LINKS: paste your full links between the quotes (email as mailto:you@example.com). Icons with an empty link do nothing. -->
+<script>window.FERN_SOCIAL = {email:"",instagram:"https://www.instagram.com/fernimpson",tiktok:"https://www.tiktok.com/@fernimpson",facebook:"https://www.facebook.com/share/1FsF3Y1EXT/",youtube:"https://www.youtube.com/@fernimpson"};</script>
+<!-- COACHING LINK: this is the page the results button opens (the next-step page with the challenge and coaching options). -->
+<script>window.FERN_COACHING_URL = "next-step.html";</script>
+<header class="bar"><span class="brand">Fern Impson</span></header>
+<main>
+  <section class="band on-burgundy reveal">
+    <div class="col">
+      <p class="mini">YOUR QUIZ RESULTS</p>
+      <h2>Your biggest confidence blocker is your MIND</h2>
+      <p class="sub gap-l">You know what you want. But the voice in your head keeps talking you out of it.</p>
+      <div class="graph" id="results-graph" hidden>
+        <div class="bars" id="bars" role="list"><div class="brow" role="listitem" data-p="mind"><div class="bhead"><span class="bname">MIND</span><span class="btag" hidden>Your main result</span></div><div class="btrack"><i class="bfill"></i></div></div><div class="brow" role="listitem" data-p="heart"><div class="bhead"><span class="bname">HEART</span><span class="btag" hidden>Your main result</span></div><div class="btrack"><i class="bfill"></i></div></div><div class="brow" role="listitem" data-p="body"><div class="bhead"><span class="bname">BODY</span><span class="btag" hidden>Your main result</span></div><div class="btrack"><i class="bfill"></i></div></div></div>
+        <p class="bnote" id="bnote" hidden></p>
+      </div>
+      <p class="hook">But here’s what your results REALLY mean...</p>
+      <svg class="down" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v15M6 13.5l6 6 6-6"/></svg>
+    </div>
+  </section>
+
+  <section class="band on-cream">
+    <div class="col">
+      <p class="copy">You have ideas. Dreams. Things you’ve wanted to do for so long.</p>
+      <p class="copy">But every time you get close to taking action, that <strong class="pop">little voice in your head</strong> shows up…</p>
+      <div class="lines gap-l"><p class="say">“What if I fail?”</p><p class="say">“What will people think of me?”</p><p class="say">“Who am I to think I can do that?”</p><p class="say">“Maybe I’m just not ready yet.”</p></div>
+      <p class="copy gap-l">And before you know it, you’re overthinking, second-guessing yourself, or finding another reason to wait.</p>
+      <p class="key">Sound familiar?</p>
+    </div>
+  </section>
+
+  <section class="band on-charcoal">
+    <div class="col">
+      <h2>But, and this is a BIG but…</h2>
+      <p class="copy gap-l">Even though your quiz results suggest that your Mind is your biggest confidence blocker, your Heart (emotions) and Body (nervous system) still play an important role, sometimes without you even realising it!</p>
+      <p class="copy">For example, emotions like fear can hold you back, and your nervous system can go into fight-or-flight mode, or even make you freeze when it’s time to take action.</p>
+      <p class="copy">I recorded a personal video for you, including one simple first step you can try!</p>
+      <div class="video reel gap-l" id="mind-video"><iframe src="https://www.youtube.com/embed/_n4UpMgZlxk?rel=0&amp;playsinline=1&amp;modestbranding=1" title="A personal video message from Fern about your Mind result" loading="lazy" allow="encrypted-media; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    </div>
+  </section>
+
+  <section class="band on-burgundy">
+    <div class="col">
+      <div style="width:100%;display:flex;justify-content:center"><a class="cta up" data-cta href="#">EXPLORE HOW WE CAN WORK TOGETHER <span class="arr">→</span></a></div>
+      <p class="copy gap-l">There’s a BIG difference between having the information and actually making a TRANSFORMATION!</p>
+      <p class="copy">And you don’t have to figure it all out on your own.<br>I can help you build real confidence, stop overthinking and start taking action towards what you REALLY want, while having FUN along the way!</p>
+    </div>
+  </section>
+  </main>
+<footer class="foot"><nav class="social" aria-label="Social media"><a href="#" data-social="email" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7.5l8.5 6 8.5-6"/></svg></a><a href="#" data-social="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg></a><a href="#" data-social="tiktok" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" d="M16.6 3c.3 2.4 1.7 4 4.1 4.2v3.2c-1.5 0-2.9-.5-4.1-1.3v6.1a5.8 5.8 0 1 1-5.8-5.8c.3 0 .6 0 .9.1v3.3a2.6 2.6 0 1 0 1.7 2.4V3h3.2z"/></svg></a><a href="#" data-social="facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21h3z"/></svg></a><a href="#" data-social="youtube" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path fill="currentColor" stroke="none" d="M10.2 9.3v5.4l4.6-2.7z"/></svg></a></nav><p class="foot-name">FERN IMPSON</p></footer>
+<script>
+(function(){
+  var url=(window.FERN_COACHING_URL||"").trim();
+  document.querySelectorAll('[data-cta]').forEach(function(a){
+    if(url){a.setAttribute('href',url);}else{a.addEventListener('click',function(e){e.preventDefault();});}
+  });
+  var soc=window.FERN_SOCIAL||{};
+  document.querySelectorAll('[data-social]').forEach(function(a){
+    var u=(soc[a.getAttribute('data-social')]||'').trim();
+    if(u){a.setAttribute('href',u);if(u.indexOf('http')===0){a.setAttribute('target','_blank');a.setAttribute('rel','noopener');}}
+    else{a.addEventListener('click',function(e){e.preventDefault();});}
+  });
+})();
+</script>
+<script>
+/* Reads the quiz scores from the web address (#scores-MIND-HEART-BODY, in thousandths) or, failing that, from this browser session.
+   Only the picture is adjusted so the main result always has the longest bar. The scores themselves are never changed. */
+(function(){
+  var NAMES=["mind","heart","body"],LABEL={mind:"Mind",heart:"Heart",body:"Body"};
+  function parse(h){var m=/^#?scores-(\d{4,6})-(\d{4,6})-(\d{4,6})$/.exec(h||"");if(!m)return null;var s=[+m[1],+m[2],+m[3]];for(var i=0;i<3;i++){if(s[i]<4000||s[i]>20100)return null;}return s;}
+  var s=parse(location.hash),code="";
+  try{if(s){sessionStorage.setItem("fernScores",s.join("-"));}else{code=sessionStorage.getItem("fernScores")||"";s=parse("scores-"+code);}}catch(e){}
+  var sec=document.getElementById("results-graph");if(!s||!sec)return;
+  var order=[0,1,2].sort(function(a,b){return s[b]-s[a]||a-b;});
+  var top=s[order[0]],w=[];
+  w[order[0]]=100;
+  var p2=s[order[1]]/top*100,p3=s[order[2]]/top*100;
+  w[order[1]]=Math.min(p2,92);
+  w[order[2]]=Math.min(p3,w[order[1]]-8);
+  var rows=sec.querySelectorAll(".brow");
+  for(var i=0;i<3;i++){
+    var r=rows[i],f=r.querySelector(".bfill"),t=r.querySelector(".btag");
+    r.setAttribute("data-w",w[i].toFixed(2));
+    if(i===order[0]){r.classList.add("is-top");t.hidden=false;}
+    r.setAttribute("aria-label",LABEL[NAMES[i]]+(i===order[0]?", your main result":""));
+  }
+  var u=s.map(function(v){return Math.floor(v/1000);}),tied=[];
+  for(var j=0;j<3;j++){if(u[j]===u[order[0]])tied.push(LABEL[NAMES[j]]);}
+  if(tied.length>1){var n=document.getElementById("bnote");n.textContent="Your "+(tied.length===2?tied.join(" and "):"Mind, Heart and Body")+" scored very closely.";n.hidden=false;}
+  sec.hidden=false;
+  var bars=document.getElementById("bars");
+  function fill(){for(var k=0;k<3;k++){rows[k].querySelector(".bfill").style.width=rows[k].getAttribute("data-w")+"%";}}
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce){fill();}else{requestAnimationFrame(function(){requestAnimationFrame(function(){bars.classList.add("go");fill();});});}
+})();
+</script>
+
+</body>
+</html>
